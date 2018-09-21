@@ -17,7 +17,7 @@
     "saucelabs": "^1.4.0",
     "selenium-webdriver": "3.0.0-beta-2",
     "underscore": "^1.8.3", 
-    "lodash":"4.17.4"
+    "lodash":"^4.17.5"
   },
   "repository": {},
   "engines": {
