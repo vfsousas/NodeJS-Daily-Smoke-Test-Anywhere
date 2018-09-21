@@ -1,8 +1,6 @@
+---
 applications:
-- path: .
-  memory: 256M
-  instances: 1
+- name: dailysmoketestanywhere
+  memory: 512M
+  host: dailysmoketestanywhere
   domain: mybluemix.net
-  name: daily-smoke-test-anywhere
-  host: daily-smoke-test-anywhere
-  disk_quota: 1024M

@@ -33,7 +33,7 @@
                 <form method='post' action='/create-job'>
                   <div class="form-group">
                     <label class='jobLabels' for="name">Script Name:</label>
-                    <input type="text" class="form-control jobInput" id="name" name='name' placeholder='Job Name' required>
+                    <input type="text" class="form-control jobInput" id="name" name='name' placeholder='Job Name'>
                   </div>
                   <div class="form-group">
                     <label class='jobLabels' for="token">Minute:</label>
@@ -42,18 +42,6 @@
                    <div class="form-group">
                     <label class='jobLabels' for="token">Times:</label>
                     <input type="number" class="form-control jobInput" id="times" min="0" max="10" name='times' placeholder='Times to run job' value='1'>
-                  </div>
-                   <div class="form-group">
-                    <label class='jobLabels' for="browser">Browser:</label>
-                    <select class='selectJob' id='browser', name='browser'>
-                      <option>chrome | 43.0</option>
-                    </select>
-                  </div>
-                   <div class="form-group">
-                    <label class='jobLabels' for="platform">Platform:</label>
-                    <select class='selectJob' id='platform', name='platform'>
-                      <option>Windows XP</option>
-                    </select>
                   </div>
                   <div class="form-group">
                   <label class='jobLabels' for="script">Script:</label>

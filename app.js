@@ -3,9 +3,9 @@ var bodyParser = require("body-parser");
 var engines = require('consolidate')
 var SauceLabs = require('saucelabs');
 var CronJob = require('cron').CronJob;
-var test = require('./test/sauceTest')
-var test2 = require('./test/sauceTest2')
-
+// var loadash = require('loadash');
+// var test = require('./test/sample_node')
+// var test2 = require('./test/sauceTest')
 
 // cfenv provides access to your Cloud Foundry environment
 var cfenv = require('cfenv');
@@ -33,11 +33,11 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req, res){
-  //var cron = require('node-cron');
+  // var cron = require('node-cron');
    res.render('index', {title: 'Login'})
 })
 
-//set global user for demo
+// set global user for demo
 app.use(function(req, res,next){
   app.locals.myAccount = setUser(req)
   next()
@@ -82,15 +82,11 @@ app.post('/create-job', function(req, res){
     var minute = req.body.minute
     var timing = '*/'+minute +' * * * *'
     var i = 0
-    var jobName = req.body.name
-    var jobPlat = req.body.platform
-    var jobBrowser = req.body.browser.split(' | ')
     var job = new CronJob({
       cronTime: timing,
-      onTick: function() {
+     onTick: function() {
         i++
-        if(i <= times ){       
-          test2(jobName, jobBrowser[0], jobBrowser[1], jobPlat)
+        if(i <= times ){       	          
           console.log('job started '  + i)
         } else{
             job.stop()
@@ -104,8 +100,9 @@ app.post('/create-job', function(req, res){
       runOnInit: true
     });
   job.start();
-  //var test = require('./test/sauceTest')
-  res.redirect('/show-jobs')
+ var webdriver = require('selenium-webdriver');
+   
+  res.redirect('/show-jobs');
 })
 
 
